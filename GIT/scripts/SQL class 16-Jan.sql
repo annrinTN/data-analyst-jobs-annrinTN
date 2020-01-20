@@ -25,7 +25,12 @@ FROM data_analyst_jobs
 WHERE location IN ('TN')
 AND (star_rating > 4)
 GROUP BY location, star_rating;
-
+-- for just the count added 19-Jan-2020
+SELECT location, COUNT (star_rating ) AS top_star_rating
+FROM data_analyst_jobs
+WHERE location IN ('TN')
+AND (star_rating > 4)
+GROUP BY location;
 --#5 How many postings in the dataset have a review count between 500 and 1000?
 -- A" 151
 SELECT COUNT (*) 
