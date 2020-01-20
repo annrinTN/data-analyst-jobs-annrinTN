@@ -82,14 +82,14 @@ HAVING review_count >5000
 ORDER BY avg_rate DESC;
 -- #11 Find all the job titles that contain the word ‘Analyst’. 
 -- How many different job titles are there?
--- A: 754 titles
+-- A: 754 titles updated to include ANALYST as well = 771
 SELECT DISTINCT title AS analyst_jobs
 FROM data_analyst_jobs
 GROUP BY title
-HAVING TITLE LIKE '%Analyst%';
+HAVING TITLE LIKE '%Analyst%' OR title LIKE '%ANALYST%';
 -- #12 How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’?
 -- What word do these positions have in common?
--- A: Tableau
+-- A: 4 titles with Tableau in common
 SELECT DISTINCT title AS non_analyst_jobs
 FROM data_analyst_jobs
 --WHERE non_analyst_jobs NOT LIKE '%Analy%'
