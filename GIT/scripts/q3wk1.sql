@@ -5,3 +5,8 @@ FROM data_analyst_jobs
 WHERE location IN ('TN', 'KY')
 GROUP BY location
 ;
+-- total count in both KY and TN
+SELECT COUNT (location) 
+FROM data_analyst_jobs
+WHERE location IN ('TN', 'KY')
+;

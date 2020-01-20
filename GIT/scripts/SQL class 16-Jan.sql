@@ -18,6 +18,11 @@ FROM data_analyst_jobs
 WHERE location IN ('TN', 'KY')
 GROUP BY location
 ;
+-- total count in both KY and TN
+SELECT COUNT (location) 
+FROM data_analyst_jobs
+WHERE location IN ('TN', 'KY')
+;
 --#4 How many postings in Tennessee have a star rating above 4?
 -- A: 3
 SELECT DISTINCT COUNT (location) , location, sum (star_rating )
@@ -45,7 +50,7 @@ WHERE review_count >= 500 AND review_count <= 1000
 SELECT  location AS state, CAST(AVG(star_rating) AS FLOAT) AS avg_rate
 FROM data_analyst_jobs
 GROUP BY state 
-ORDER BY avg_rate DESC
+ORDER BY avg_rate DESC NULLS LAST
 ;
 -- #7 Select unique job titles from the data_analyst_jobs table. How many are there?
 -- A: 881
