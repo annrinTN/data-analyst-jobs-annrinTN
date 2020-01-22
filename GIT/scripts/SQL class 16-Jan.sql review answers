@@ -71,7 +71,7 @@ SELECT DISTINCT company, ROUND(AVG(star_rating), 2) AS avg_rate, review_count
 FROM data_analyst_jobs
 GROUP BY company, review_count
 HAVING review_count >5000;
---actual answer from class
+--actual answer from class 71 - I get 77 rows
 SELECT company, ROUND(AVG(star_rating), 2) AS avg_rate, review_count
 FROM data_analyst_jobs
 WHERE location IS NOT NULL
